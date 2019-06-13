@@ -1,3 +1,15 @@
+## 2.3.2 (2019-06-10)
++ **ngResizable**: Fix [issue #164](https://github.com/xieziyu/angular2-draggable/issues/164): Resize doesn't work on Windows10 IE11 ([PR #171](https://github.com/xieziyu/angular2-draggable/pull/171) by [shumih](https://github.com/shumih]), [PR #174](https://github.com/xieziyu/angular2-draggable/pull/174) by [LiorSaadon](https://github.com/LiorSaadon]))
+
+## 2.3.0 (2019-05-14)
+
+#### New
++ **ngDraggable**: Add CSS class `ng-dragging` when dragging.
++ **ngResizable**: Add `direction` property in `IResizeEvent`. 
+
+#### Bugfix
++ **ngResizable**: Fix [issue #157](https://github.com/xieziyu/angular2-draggable/issues/159): Problem resizing with containment
+
 ## 2.2.4 (2019-04-19)
 
 #### Bugfix

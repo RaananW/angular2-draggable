@@ -27,6 +27,18 @@ angular2-draggable has angular directives that make the DOM element draggable an
     + provided since v2.0, requires Angular >= 6
 
 # Latest Update
++ 2019.06.10: 2.3.2:
+  + **ngResizable**
+    + Fix [issue #164](https://github.com/xieziyu/angular2-draggable/issues/164): Resize doesn't work on Windows10 IE11 ([PR #171](https://github.com/xieziyu/angular2-draggable/pull/171) by [shumih](https://github.com/shumih]), [PR #174](https://github.com/xieziyu/angular2-draggable/pull/174) by [LiorSaadon](https://github.com/LiorSaadon]))
+
++ 2019.05.14: 2.3.0:
+  + **ngResizable**:
+    + Fix [issue #157](https://github.com/xieziyu/angular2-draggable/issues/159): Problem resizing with containment
+    + Add `direction` property in `IResizeEvent`. 
+
+  + **ngDraggable**: 
+    + Add CSS class `ng-dragging` when dragging.
+
 + 2019.04.19: 2.2.4:
   + **ngResizable**:
     + Fix [issue #157](https://github.com/xieziyu/angular2-draggable/issues/157): calling resetSize() method cause exception
@@ -61,10 +73,6 @@ angular2-draggable has angular directives that make the DOM element draggable an
 
 + 2018.10.26: 2.1.6
   + **ngResizable**: fix [issue #115](https://github.com/xieziyu/angular2-draggable/issues/115): rzResizing IE event issue
-
-+ 2018.10.15: 2.1.5
-  + **ngDraggable**: fix [issue #114](https://github.com/xieziyu/angular2-draggable/issues/114): EndOffset event not working properly with SnapToGrid
-
 
 # Installation
 ```
@@ -168,11 +176,15 @@ Well you can use both directives concurrently if you wish:
     | preventDefaultEvent | boolean | `false` | Whether to prevent default mouse event. |
 
 ## CSS:
-+ When `ngDraggable` is enabled on some element, `ng-draggable` class is automatically assigned to it. You can use it to customize the pointer style. For example:
++ When `ngDraggable` is enabled on some element, `ng-draggable` and `ng-dragging` class is automatically toggled on it. You can use it to customize the pointer style. For example:
 
     ```css
     .ng-draggable {
-      cursor: move;
+      cursor: grab;
+    }
+
+    .ng-dragging {
+      cursor: grabbing;
     }
     ```
 
@@ -219,6 +231,12 @@ Well you can use both directives concurrently if you wish:
       position: {
         top: number;
         left: number;
+      };
+      direction: {
+        n: boolean;
+        s: boolean;
+        w: boolean;
+        e: boolean;
       };
     }
     ```
